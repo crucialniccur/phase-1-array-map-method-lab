@@ -22,3 +22,32 @@ function titleCased() {
 }
 
 console.log(titleCased());
+
+// try iterating individual words in a string
+const random = ["Hello there"];
+
+function iterateString() {
+  return random.map((random) => {
+    for (item of random) {
+      return random.split(" ");
+    }
+  });
+}
+
+console.log(iterateString());
+
+// titlecase
+function toTitleCase(str) {
+  if (!str) {
+    return "";
+  }
+  return str
+    .toLowerCase()
+    .split(" ")
+    .map(function (word) {
+      return word.charAt(0).toUpperCase().concat(word.substr(1));
+    })
+    .join(" ");
+}
+
+console.log(toTitleCase("this is meee"));
