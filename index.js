@@ -16,38 +16,44 @@ const tutorials = [
 // });
 // console.log(titleCased);
 function titleCased() {
-  return tutorials.map((robot) => {
-    return robot + " trial";
+  return tutorials.map((tutorial) => {
+    const words = tutorial.split(" ");
+    words.forEach((word, i) => {
+      words[i] = `${word[0].toUpperCase()}${word.substring(1)}`;
+      console.log(words[0]);
+    });
+    console.log(words);
+    return words.join(" ");
   });
 }
 
 console.log(titleCased());
 
-// try iterating individual words in a string
-const random = ["Hello there"];
+// // try iterating individual words in a string
+// const random = ["Hello there"];
 
-function iterateString() {
-  return random.map((random) => {
-    for (item of random) {
-      return random.split(" ");
-    }
-  });
-}
+// function iterateString() {
+//   return random.map((random) => {
+//     for (item of random) {
+//       return random.split(" ");
+//     }
+//   });
+// }
 
-console.log(iterateString());
+// console.log(iterateString());
 
-// titlecase
-function toTitleCase(str) {
-  if (!str) {
-    return "";
-  }
-  return str
-    .toLowerCase()
-    .split(" ")
-    .map(function (word) {
-      return word.charAt(0).toUpperCase().concat(word.substr(1));
-    })
-    .join(" ");
-}
+// // titlecase
+// function toTitleCase(str) {
+//   if (!str) {
+//     return "";
+//   }
+//   return str
+//     .toLowerCase()
+//     .split(" ")
+//     .map(function (word) {
+//       return word.charAt(0).toUpperCase().concat(word.substr(1));
+//     })
+//     .join(" ");
+// }
 
-console.log(toTitleCase("this is meee"));
+// console.log(toTitleCase("this is meee"));
